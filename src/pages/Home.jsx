@@ -1,14 +1,24 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { axiosApi } from '../service/Api';
 
 export default function Home() {
+  const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:3000/users')
-      .then(response => {
-        console.log(response.data);
-      })
+    async function getData() {
+      const getInfo = await axiosApi();
+      setData(getInfo)
+    }
+    getData()
   },[]);
+  console.log(data);
   return (
-    <h1>Home</h1>
+    <>
+      {
+        data.length
+        && (
+          
+        )
+      }
+    </>
   )
 }
