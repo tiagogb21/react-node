@@ -1,3 +1,5 @@
+const userRouter = require('./routers/user.router');
+
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -8,9 +10,7 @@ const PORT = 3000;
 
 app.use(cors());
 
-app.get('/', (req, res) => { 
- res.send("<h1>Home page</h1>");
-});
+app.use(userRouter);
 
 app.get('/users', (req, res) => { 
   axios.get('https://randomuser.me/api/?page=1&results=10')

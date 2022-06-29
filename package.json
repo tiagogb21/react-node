@@ -16,6 +16,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "sequelize": "^6.21.2",
+    "sequelize-cli": "^6.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

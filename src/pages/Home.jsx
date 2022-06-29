@@ -10,13 +10,23 @@ export default function Home() {
     }
     getData()
   },[]);
-  console.log(data);
+
   return (
     <>
       {
-        data.length
-        && (
-          
+        data.length === 0
+        ? (
+          <h3>Loading...</h3>
+        )
+        : (
+          data.map((item) => (
+            <article>
+              <p>
+                {`${item.name.title} ${item.name.first} ${item.name.last}`}
+              </p>
+              <img src={ item.picture.thumbnail } alt="" />
+            </article>
+          ))
         )
       }
     </>
